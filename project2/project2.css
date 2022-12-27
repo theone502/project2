@@ -1,0 +1,76 @@
+body{
+    font-family: sans-serif;
+    background-color: aqua;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.img-container .img{
+    position: relative;
+    margin-right: -20px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.img-container .img img{
+    width: 200px;
+    height: 200px;
+    transition: trasform 0.5s ease-in-out;
+    margin: 15px;
+}
+
+.img-container .img .name{
+    position: absolute;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    display: none;
+    min-width: 100px;
+    width: 150px;
+    top: -70px;
+    padding: 10px 15px;
+}
+
+.img-container .img .name .text{
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 150px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.img-container .img:hover .name{
+    display: inline-block;
+    transform: translateY(-20px);
+}
+
+.img-container .img .name::before{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: 40%;
+    bottom: -20px;
+    border-top: 10px solid black;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.img-container .img:hover img{
+    transform: translateY(-50px);
+}
+
+@media (max-width: 680px){
+    .img-container{
+        flex-direction: column;
+        height: 180vh;
+    }
+}
